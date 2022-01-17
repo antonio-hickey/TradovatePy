@@ -12,8 +12,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install dependencies
       run: |
-        sudo apt-get install python3.10
-        sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
+        sudo apt-get install python3.9
+        sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.9 1
         python3 -m pip install --upgrade pip
         pip3 install -r requirements.txt
     - uses: pre-commit/action@v2.0.3
