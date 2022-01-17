@@ -38,4 +38,4 @@ repos:
         types: [cython]
       - id: isort
         name: isort (pyi)
-        types: [pyi] 
+        types: [pyi]
