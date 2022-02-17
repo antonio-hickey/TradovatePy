@@ -2,8 +2,9 @@ import asyncio
 from datetime import datetime
 
 from aiohttp import ClientSession
-from app.config import URLs
-from app.util.date_and_time import parse_hour
+
+from TradovatePy.config import URLs
+from TradovatePy.util.date_and_time import parse_hour
 
 
 class Session:
