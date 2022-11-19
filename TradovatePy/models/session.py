@@ -52,6 +52,7 @@ class Session:
         await self.__aenter__()
         url = f"{self.URL}/auth/accesstokenrequest"
         async with self._session.post(url, json=self.CREDs, ssl=False) as resp:
+            await self.__aexit__()
             return await resp.json()
 
     async def get(self, url: str):
@@ -59,6 +60,7 @@ class Session:
         await self.__aenter__()
         url = f"{self.URL + url}"
         async with self._session.get(url, headers=self.headers, ssl=False) as resp:
+            await self.__aexit__()
             return await resp.json()
 
     async def post(self, url: str, payload: dict):
@@ -66,6 +68,7 @@ class Session:
         await self.__aenter__()
         url = f"{self.URL + url}"
         async with self._session.post(url, headers=self.headers, json=payload, ssl=False) as resp:
+            await self.__aexit__()
             return await resp.json()
 
     def render_credentials_payload(self) -> dict:
